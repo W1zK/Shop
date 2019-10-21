@@ -1,7 +1,7 @@
 package Categories;
 
-import offline.praktika.*;
-import offline.praktika.Specific.*;
+
+import Specific.*;
 
 
 public class Smartphone extends Items implements TechSpecification {

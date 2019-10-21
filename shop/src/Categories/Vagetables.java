@@ -1,6 +1,6 @@
 package Categories;
-import offline.praktika.*;
-import offline.praktika.Specific.*;
+import Specific.TechSpecification;
+
 
 public class Vagetables extends Items implements TechSpecification {
 

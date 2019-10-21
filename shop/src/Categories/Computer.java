@@ -1,7 +1,7 @@
 package Categories;
 
-import offline.praktika.*;
-import offline.praktika.Specific.*;
+import Specific.*;
+
 
 public class Computer extends Items implements TechSpecification {
     public Cpu cpu;

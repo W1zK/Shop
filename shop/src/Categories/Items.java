@@ -1,9 +1,14 @@
+package Categories;
+
 public class Items {
+
     private int id;
     private String name;
     private double  value;
     private String other;
     private double price;
+    //static int k=1;
+    //public static Items[] smartphones; = new Smartphone[1];
 
     public Items(int id, String name, double value, String other, double price) {
         this.id = id;

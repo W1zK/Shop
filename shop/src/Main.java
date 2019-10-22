@@ -2,18 +2,20 @@ import java.util.Scanner;
 
 public class Main {
     private static Scanner scanner = new Scanner(System.in);
-    private static boolean rerun = true;
+    static boolean rerun = true;
     private static Store store = new Store();
+
 
 
     static void doing(){
         while (rerun){
             rerun = false;
-            System.out.println("Выберите действие");
-            int d = scanner.nextInt();
-            scanner.next();
+            System.out.println("Выберите категорию");
+            System.out.println();
+            int d = 1;//scanner.nextInt();
             switch (d){
                 case 1:
+                    store.doType(store.smartphones);
                     System.out.println("добавление");
                     break;
                 case 2:
@@ -34,7 +36,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        while (rerun) {
+        /*while (rerun) {
 
             rerun = false;
             System.out.println("1 - считает в консоли до числа Х" +
@@ -66,7 +68,10 @@ public class Main {
 
 
             }
-        }
+        }*/
+        doing();
+
+
     }
     private static void repeet(){
         String yes = "y";

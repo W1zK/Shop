@@ -78,13 +78,57 @@ public class Store implements Search,AddItems {
 
         System.out.println("Smartphone successfully added to the warehouse");
     }*/
+   void doType(Smartphone[]mass){
+       System.out.println("1 - Add Item" +
+               "\n2 - Sell Item" +
+               "\n3 - Search Item");
+       System.out.print("Выберите задание из списка:");
+       int input = scanner.nextInt();
+
+       switch (input) {
+           case 1:
+               add.addItem(mass);
+               repeet();
+               break;
+           case 2:
+               add.sellItem(mass);
+               repeet();
+               break;
+           case 3:
+               search(mass);
+               repeet();
+               break;
+
+           default:
+               System.out.println("Вы ввели не верный номер задания, повторите ввод!");
+               repeet();
+
+
+       }
+
+   }
+    private void repeet() {
+        String yes = "y";
+        String no = "n";
+        Main.rerun = false;
+        System.out.println("\nПродолжить?" +
+                "\n(y)YES или (n)NO");
+        String question = scanner.next();
+        if (question.equals(yes)) {
+            Main.rerun = true;
+        } else if (question.equals(no)) {
+            System.out.println("Спасибо");
+        } else {
+            System.out.println("Введите другую букву: ");
+            repeet();
+        }
+    }
 
    AddItems add = new AddItems() {
        @Override
        public void addItem(Smartphone[] mass) {
            System.out.println("Enter ID");
            int smartID = 11;//scanner.nextInt();
-
            for (int i = 0; i < mass.length - 1; i++) {
                if (smartID == mass[i].getId()) {
                    System.out.println("Введите количество добавляемых смартфонов" + mass[i].getName() + ":");
@@ -93,17 +137,17 @@ public class Store implements Search,AddItems {
                    System.out.println("Smartphone successfully added to the warehouse" + mass[i].getValue());
                } else break;
            }
-           scanner.nextLine();
+           //scanner.next();
            System.out.println("Enter name:");
            String smartName = "Nokia";//scanner.nextLine();
            System.out.println("Enter value");
            int value = 5;//scanner.nextInt();
-           scanner.nextLine();
+           //scanner.next();
            System.out.println("Enter description");
            String description = "lol";// scanner.nextLine();
            System.out.println("Enter price");
            double price = 300;//scanner.nextDouble();
-           scanner.nextLine();
+           //scanner.next();
            System.out.println("Enter OS type");
            String operationSys = "android";//scanner.nextLine();
            System.out.println("Enter RAM size");
@@ -135,6 +179,7 @@ public class Store implements Search,AddItems {
            k++;
 
            System.out.println("Smartphone successfully added to the warehouse");
+           System.out.println(smartphones[0].getName());
 
        }
 
@@ -175,47 +220,7 @@ public class Store implements Search,AddItems {
         }
     };
 
-    /*void sellSmartphones() {
-        //scanner.nextLine();
-        System.out.println("name");
-        String name = "Nokia";// scanner.next();
-        System.out.println("amount");
-        int amount = 3;// scanner.nextInt();
-
-        for (int i = 0; i < smartphones.length; i++) {
-
-            if (name.equals(smartphones[i].getName())) {
-                if (smartphones[i].getValue() >= amount) {
-                    smartphones[i].setValue(smartphones[i].getValue() - amount);
-                    wallet+=smartphones[i].getPrice()*amount;
-                } else {
-                    System.out.println("You cannot sell this amount");
-                    sellSmartphones();
-                }
-
-            }
-
-        }
-        System.out.println(wallet);
-    }*/
-
-
-    /*void searcher(Computer[]mass,String name){
-
-        Search search = new Search() {
-            void serch(){
-                for (int i = 0; i <smartphones.length ; i++) {
-                    if (smartphones[i].getName().contains(name)){
-                        System.out.println();
-                    }
-
-                }
-            }
-        };
-
-    }*/
-
-    
+     
 
 
 

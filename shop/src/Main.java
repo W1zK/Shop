@@ -3,20 +3,37 @@ import java.util.Scanner;
 public class Main {
     private static Scanner scanner = new Scanner(System.in);
     private static boolean rerun = true;
+    private static Store store = new Store();
 
-    static void enterType(){
+
+    static void doing(){
         while (rerun){
             rerun = false;
-            int type = scanner.nextInt();
-            switch (type){
+            System.out.println("Выберите действие");
+            int d = scanner.nextInt();
+            scanner.next();
+            switch (d){
                 case 1:
+                    System.out.println("добавление");
+                    break;
+                case 2:
+                    System.out.println("Sell");
+                    break;
+                case 3:
+                    System.out.println("Search");
+                    break;
+                case 4:
+                    System.out.println("Wallet: "+store.wallet+"$");
+                    break;
+                case 5: rerun = false;
+                break;
             }
         }
+
     }
-    static void
 
     public static void main(String[] args) {
-        Store store = new Store();
+
         while (rerun) {
 
             rerun = false;

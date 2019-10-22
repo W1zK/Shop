@@ -11,10 +11,10 @@ import java.util.Scanner;
 
 public class Store implements Search,AddItems {
     Scanner scanner = new Scanner(System.in);
-    private double wallet = 0;
+    double wallet = 0;
     static int k = 1;
     static int p = 1;
-    static Smartphone[] smartphones = new Smartphone[k];
+    Smartphone[] smartphones = new Smartphone[k];
     Computer[] computers = new Computer[p];
     private ArrayList<Vagetables> vagetables = new ArrayList<>();
     private ArrayList<Candy> candies = new ArrayList<>();

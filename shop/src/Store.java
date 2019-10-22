@@ -10,10 +10,10 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class Store implements Search,AddItems {
-    Scanner scanner = new Scanner(System.in);
+    private Scanner scanner = new Scanner(System.in);
     double wallet = 0;
-    static int k = 1;
-    static int p = 1;
+    private static int k = 1;
+    private static int p = 1;
     Smartphone[] smartphones = new Smartphone[k];
     Computer[] computers = new Computer[p];
     private ArrayList<Vagetables> vagetables = new ArrayList<>();
@@ -22,62 +22,6 @@ public class Store implements Search,AddItems {
     private ArrayList<Soda> sodas = new ArrayList<>();
     private ArrayList<Dress> dresses = new ArrayList<>();
 
-   /* void setSmartphones() {
-
-        System.out.println("Enter ID");
-        int smartID = 11;//scanner.nextInt();
-
-        for (int i = 0; i < smartphones.length - 1; i++) {
-            if (smartID == smartphones[i].getId()) {
-                System.out.println("Введите количество добавляемых смартфонов" + smartphones[i].getName() + ":");
-                int valuePlus = scanner.nextInt();
-                smartphones[i].setValue(smartphones[i].getValue() + valuePlus);
-                System.out.println("Smartphone successfully added to the warehouse" + smartphones[i].getValue());
-            } else break;
-        }
-        //scanner.nextLine();
-        System.out.println("Enter name:");
-        String smartName = "Nokia";//scanner.nextLine();
-        System.out.println("Enter value");
-        int value = 5;//scanner.nextInt();
-       // scanner.nextLine();
-        System.out.println("Enter description");
-        String description = "lol";// scanner.nextLine();
-        System.out.println("Enter price");
-        double price = 300;//scanner.nextDouble();
-        //scanner.nextLine();
-        System.out.println("Enter OS type");
-        String operationSys = "android";//scanner.nextLine();
-        System.out.println("Enter RAM size");
-        int ramSize = 4;//scanner.nextInt();
-        //scanner.nextLine();
-        System.out.println("Enter RAM type");
-        String ramType = "ddr4";// scanner.nextLine();
-        System.out.println("Enter number of core");
-        int numbCore = 4;//scanner.nextInt();
-        System.out.println("Enter core frequency");
-        double freqCore =5.5;// scanner.nextDouble();
-        System.out.println("Enter screen size");
-        float screenSize = (float) 5.5;// scanner.nextFloat();
-        //scanner.nextLine();
-        System.out.println("Enter battery life time");
-        int battLife = 36;//scanner.nextInt();
-        //scanner.nextLine();
-        System.out.println("Enter warranty");
-        int warranty =12;// scanner.nextInt();
-
-        smartphones[k - 1] = new Smartphone(smartID, smartName, value, description, price,
-                new OperationSystem(operationSys),
-                new Ram(ramSize, ramType), new Cpu(numbCore, freqCore),
-                new Screen(screenSize),
-                new WorkTimeBaterry(battLife),
-                new Warranty(warranty));
-
-
-        k++;
-
-        System.out.println("Smartphone successfully added to the warehouse");
-    }*/
    void doType(Smartphone[]mass){
        System.out.println("1 - Add Item" +
                "\n2 - Sell Item" +
@@ -107,7 +51,7 @@ public class Store implements Search,AddItems {
        }
 
    }
-    private void repeet() {
+   void repeet() {
         String yes = "y";
         String no = "n";
         Main.rerun = false;
@@ -124,7 +68,7 @@ public class Store implements Search,AddItems {
         }
     }
 
-   AddItems add = new AddItems() {
+   private AddItems add = new AddItems() {
        @Override
        public void addItem(Smartphone[] mass) {
            System.out.println("Enter ID");
@@ -199,13 +143,23 @@ public class Store implements Search,AddItems {
                        wallet+=mass[i].getPrice()*amount;
                    } else {
                        System.out.println("You cannot sell this amount");
-                       sellItem();
+                       sellItem(smartphones);
                    }
 
                }
 
            }
            System.out.println(wallet);
+       }
+
+       @Override
+       public void sellItem(Computer[] mass) {
+
+       }
+
+       @Override
+       public void addItem(Computer[] mass) {
+
        }
    };
     Search search = new Search() {
@@ -220,7 +174,7 @@ public class Store implements Search,AddItems {
         }
     };
 
-     
+
 
 
 

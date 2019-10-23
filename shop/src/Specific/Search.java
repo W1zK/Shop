@@ -15,8 +15,9 @@ public interface Search {
 
     default void search(Smartphone[] mass) {
         System.out.println("Enter the name");
-        String nm = scanner.next();
-        for (int i = 0; i < mass.length; i++) {
+        scanner.next();
+        String nm = scanner.nextLine();
+        for (int i = 0; i < mass.length-1; i++) {
             if (mass[i].getName().contains(nm)) {
                 System.out.println("Full Name" + mass[i].getName() + "\nID" + mass[i].getId() + "\namount" + mass[i].getValue());
             }
@@ -27,8 +28,9 @@ public interface Search {
 
     default void search(Computer[] mass) {
         System.out.println("Enter the name");
-        String nm = scanner.next();
-        for (int i = 0; i < mass.length; i++) {
+        scanner.next();
+        String nm = scanner.nextLine();
+        for (int i = 0; i < mass.length-1; i++) {
             if (mass[i].getName().contains(nm)) {
                 System.out.println("Full Name" + mass[i].getName() + "\nID" + mass[i].getId() + "\namount" + mass[i].getValue());
             }
@@ -38,8 +40,9 @@ public interface Search {
     }
     default void search(Vagetables[] mass) {
         System.out.println("Enter the name");
-        String nm = scanner.next();
-        for (int i = 0; i < mass.length; i++) {
+        scanner.next();
+        String nm = scanner.nextLine();
+        for (int i = 0; i < mass.length-1; i++) {
             if (mass[i].getName().contains(nm)) {
                 System.out.println("Full Name" + mass[i].getName() + "\nID" + mass[i].getId() + "\namount" + mass[i].getValue());
             }

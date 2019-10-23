@@ -5,6 +5,7 @@ import Categories.Smartphone;
 import Categories.Vagetables;
 
 
+import java.text.ParseException;
 import java.util.Scanner;
 
 
@@ -20,7 +21,7 @@ public abstract class AddItems extends Param{
 
     public abstract void addItem(Computer[] mass);
     public abstract void addItem(Smartphone[] mass);
-    public abstract void addItem(Vagetables[] mass);
+    public abstract void addItem(Vagetables[] mass) throws ParseException;
 
 
     public abstract  void sellItem(Computer[] mass);
@@ -31,7 +32,7 @@ public abstract class AddItems extends Param{
 
     public abstract void doType(Smartphone[]mass);
     public abstract void doType(Computer[]mass);
-    public abstract void doType(Vagetables[]mass);
+    public abstract void doType(Vagetables[]mass) throws ParseException;
 
 
 

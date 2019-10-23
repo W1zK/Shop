@@ -4,6 +4,7 @@ import Categories.*;
 import Specific.*;
 
 import java.lang.annotation.Target;
+import java.text.ParseException;
 import java.util.ArrayList;
 
 import java.util.Arrays;
@@ -13,7 +14,7 @@ import java.util.Scanner;
 public class Store extends AddItems implements Search {
     private Scanner scanner = new Scanner(System.in);
     double wallet = 0;
-    private ArrayList<Vagetables> vagetables = new ArrayList<>();
+
     private ArrayList<Candy> candies = new ArrayList<>();
     private ArrayList<Water> waters = new ArrayList<>();
     private ArrayList<Soda> sodas = new ArrayList<>();
@@ -82,9 +83,36 @@ public class Store extends AddItems implements Search {
     }
 
     @Override
-    public void doType(Vagetables[] mass) {
+    public void doType(Vagetables[] mass) throws ParseException {
+        System.out.println("1 - Add Item" +
+                "\n2 - Sell Item" +
+                "\n3 - Search Item");
+        System.out.print("Выберите задание из списка:");
+        int input = scanner.nextInt();
+
+        switch (input) {
+            case 1:
+                addItem(mass);
+                repeet();
+                break;
+            case 2:
+                sellItem(mass);
+                repeet();
+                break;
+            case 3:
+                search(mass);
+                repeet();
+                break;
+
+            default:
+                System.out.println("Вы ввели не верный номер задания, повторите ввод!");
+                repeet();
+
+
+        }
 
     }
+
 
     @Override
     public void search(Smartphone[] mass) {
@@ -229,7 +257,7 @@ public class Store extends AddItems implements Search {
     }
 
     @Override
-    public void addItem(Vagetables[] mass) {
+    public void addItem(Vagetables[] mass) throws ParseException {
         System.out.println("Enter ID");
         Id = 11;//scanner.nextInt();
         for (int i = 0; i < mass.length - 1; i++) {
@@ -238,22 +266,40 @@ public class Store extends AddItems implements Search {
                 int valuePlus = scanner.nextInt();
                 mass[i].setValue(mass[i].getValue() + valuePlus);
                 System.out.println("Smartphone successfully added to the warehouse" + mass[i].getValue());
-                repeet();
+                Main.rerun = true;
+                Main.doing();
                 break;
 
             } else break;
 
         }
+
         //scanner.next();
         System.out.println("Enter name:");
-        name = "Dell";//scanner.nextLine();
+        name = "Tomato";//scanner.nextLine();
         System.out.println("Enter value");
-        value = 3;//scanner.nextInt();
+        value = 5;//scanner.nextInt();
         //scanner.next();
         System.out.println("Enter description");
         description = "lol";// scanner.nextLine();
         System.out.println("Enter price");
-        price = 300;//scanner.nextDouble();
+        price = 25;//scanner.nextDouble();
+        System.out.println("Enter Variety");
+        variety = "black tomato"; // scanner.nextLine();
+        System.out.println("Enter date of manufacture(dd.MM.yyyy)");
+        dateIn = "23.10.2019"; // scanner.nextLine();
+        temperature = 5.5; //scanner.nextDouble();
+        expDay = 21; //scanner.nextInt();
+        vagetables[v] = new Vagetables(Id, name, value, description, price,
+                new Variety(variety),
+                new ShelfLife(dateIn, temperature, expDay));
+
+
+        vagetables = Arrays.copyOf(vagetables, vagetables.length + 1);
+
+        System.out.println("Computer successfully added to the warehouse");
+        System.out.println("---" + vagetables[v].getName() + "---");
+        v++;
 
     }
 
@@ -315,6 +361,29 @@ public class Store extends AddItems implements Search {
 
     @Override
     public void sellItem(Vagetables[] mass) {
+        //scanner.nextLine();
+        System.out.println("name");
+        String name = "Tomato";// scanner.next();
+        System.out.println("amount");
+        int amount = 2;// scanner.nextInt();
+
+        for (int i = 0; i < mass.length - 1; i++) {
+
+            if (name.equals(mass[i].getName())) {
+                if (mass[i].getValue() >= amount) {
+                    mass[i].setValue(mass[i].getValue() - amount);
+                    wallet += mass[i].getPrice() * amount;
+                    break;
+                } else {
+                    System.out.println("You cannot sell this amount");
+                    repeet();
+                    break;
+                }
+
+            }
+
+        }
+        System.out.println(wallet);
 
     }
 

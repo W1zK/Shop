@@ -16,7 +16,12 @@ public class Param {
     protected double videoCpuFreq;
     protected int videoRamSize;
     protected String videoRamType;
+    protected String variety;
+    protected String dateIn;
+    protected double temperature;
+    protected int expDay;
     protected int k;
     protected int p;
+    protected int v;
 
 }

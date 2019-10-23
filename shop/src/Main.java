@@ -1,14 +1,15 @@
+import java.text.ParseException;
 import java.util.Scanner;
 
 public class Main {
     private static Scanner scanner = new Scanner(System.in);
     static boolean rerun = true;
     private static Store store = new Store();
-    //private static Store store = new Store();
 
 
 
-    static void doing(){
+
+    static void doing() throws ParseException {
         while (rerun){
             rerun = false;
             System.out.println("Выберите категорию");
@@ -17,14 +18,15 @@ public class Main {
             switch (d){
                 case 1:
                     store.doType(store.smartphones);
-                    System.out.println("добавление");
+
                     break;
                 case 2:
                     store.doType(store.computers);
-                    System.out.println("Sell");
+
                     break;
                 case 3:
-                    System.out.println("Search");
+                    store.doType(store.vagetables);
+
                     break;
                 case 4:
                     System.out.println("Wallet: "+store.wallet+"$");
@@ -37,9 +39,7 @@ public class Main {
 
     }
 
-    public static void main(String[] args) {
-
-
+    public static void main(String[] args) throws ParseException {
         doing();
 
 

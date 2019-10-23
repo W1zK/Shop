@@ -2,30 +2,38 @@ package Specific;
 
 import Categories.Computer;
 import Categories.Smartphone;
+import Categories.Vagetables;
 
 
-public interface AddItems {
-    default void addItem() {
-
-    }
-    default void sellItem() {
-
-    }
-
-    default void sellItem(Smartphone[] mass) {
-
-    }
-
-    default void addItem(Smartphone[] mass) {
+import java.util.Scanner;
 
 
-    }
-    default void sellItem(Computer[] mass) {
+public abstract class AddItems extends Param{
+    public static final Scanner scanner = new Scanner(System.in);
 
-    }
+    public Smartphone[] smartphones = new Smartphone[1];
+    public Computer[] computers = new Computer[1];
+    public Vagetables[] vagetables = new Vagetables[1];
 
-    default void addItem(Computer[] mass) {
 
 
-    }
+
+    public abstract void addItem(Computer[] mass);
+    public abstract void addItem(Smartphone[] mass);
+    public abstract void addItem(Vagetables[] mass);
+
+
+    public abstract  void sellItem(Computer[] mass);
+    public abstract void sellItem(Smartphone[] mass);
+    public abstract void sellItem(Vagetables[] mass);
+
+
+
+    public abstract void doType(Smartphone[]mass);
+    public abstract void doType(Computer[]mass);
+    public abstract void doType(Vagetables[]mass);
+
+
+
+
 }

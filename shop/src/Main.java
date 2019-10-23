@@ -4,6 +4,7 @@ public class Main {
     private static Scanner scanner = new Scanner(System.in);
     static boolean rerun = true;
     private static Store store = new Store();
+    //private static Store store = new Store();
 
 
 
@@ -19,6 +20,7 @@ public class Main {
                     System.out.println("добавление");
                     break;
                 case 2:
+                    store.doType(store.computers);
                     System.out.println("Sell");
                     break;
                 case 3:

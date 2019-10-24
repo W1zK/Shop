@@ -6,4 +6,12 @@ public class WorkTimeBaterry implements TechSpecification {
     public WorkTimeBaterry(int time) {
         this.time = time;
     }
+
+    public int getTime() {
+        return time;
+    }
+
+    public void setTime(int time) {
+        this.time = time;
+    }
 }

@@ -1,3 +1,6 @@
+import Categories.Computer;
+import Categories.Smartphone;
+import Specific.AddItems;
 import Specific.Brend;
 
 import java.text.ParseException;
@@ -13,7 +16,9 @@ public class Main {
         while (rerun) {
             rerun = false;
             System.out.println("Выберите категорию");
-            System.out.println();
+            System.out.println("\n1-smartphones"+"\n2-computers"+"\n3-vagetables"+
+                                "\n4-candies"+"\n5-water"+"\n6-soda"+"\n7-dresses"+
+                                "\n8-Wallet info"+"\n0-EXIT");
             int d = scanner.nextInt();
             switch (d) {
                 case 1:
@@ -56,9 +61,9 @@ public class Main {
     }
 
     public static void main(String[] args) throws ParseException {
-        //doing();
-        Brend brend = new Brend("22.05.1238", "ggg", 123, 123);
-        System.out.println(brend.getYear());
+        doing();
+
+
 
 
     }

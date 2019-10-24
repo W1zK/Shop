@@ -27,15 +27,15 @@ public class Smartphone extends Items implements TechSpecification {
 
 
     }
-    public Smartphone() {
-
-    }
 
 
     @Override
     public void show() {
         super.show();
-        System.out.println(operationSystem.getOs());
+        System.out.println("Operation system: "+operationSystem.getOs()+"\nRAM size & type: "+ram.getValue()+"("+ram.getType()+")"+
+                "CPU core & frequency: "+cpu.getCore()+"("+cpu.getFreq()+")"+"\nScreen size: "+screenSize.getD()+"\nLife time: "+baterry.getTime()+
+                "\nWarranty: "+warranty.getWarranty());
+
 
     }
 }

@@ -22,10 +22,11 @@ public class Computer extends Items implements TechSpecification {
         this.cpu = cpu;
         this.video = video;
         this.videoMemory = videoMemory;
-        this.warranty=warranty;
+        this.warranty = warranty;
 
 
     }
+
     public Computer() {
 
     }
@@ -33,5 +34,10 @@ public class Computer extends Items implements TechSpecification {
     @Override
     public void show() {
         super.show();
+        System.out.println("Technical Specification:" + "\n---RAM---" +
+                "\nRAM type: " + ram.getType() + "\nRAM size: " + ram.getValue()+
+                "\n---CPU---"+"\nCPU core: "+cpu.getCore()+"\nCPU frequency: "+cpu.getFreq()+
+                "\n---Video card---"+"\nVideo core: "+video.getCore()+"\n Video frequency: "+video.getFreq()+
+                "\nVideo memory type: "+videoMemory.getType()+"\nVideo memory size: "+videoMemory.getValue());
     }
 }

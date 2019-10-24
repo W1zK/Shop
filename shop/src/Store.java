@@ -16,6 +16,7 @@ public class Store extends AddItems implements Search {
     double wallet = 0;
 
 
+
     @Override
     public void doType(Smartphone[] mass) throws ParseException {
         System.out.println("1 - Add Item" +
@@ -44,6 +45,7 @@ public class Store extends AddItems implements Search {
 
 
         }
+
 
     }
 
@@ -588,7 +590,7 @@ public class Store extends AddItems implements Search {
         System.out.println("Enter price");
         price = 3;//scanner.nextDouble();
         System.out.println("Enter year of foundation");
-        year = "1927";// scanner.nextLine();
+        year = "25.10.1927";// scanner.nextLine();
         System.out.println("Enter brend name");
         brendName = "Prado";// scanner.nextLine();
         System.out.println("Enter value of personal");

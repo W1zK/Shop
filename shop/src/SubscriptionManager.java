@@ -6,7 +6,7 @@ public class SubscriptionManager {
 
 
     private Users[] users = new Users[1];
-    private Sender sender = new Sender("shcherbanuk.a@blest.ua", "blestKIEV2012");
+    private Sender sender = new Sender("shcherbanuk.a@blest.ua", "zxc123A21");
     private String sendFrom = "shcherbanuk.a@blest.ua";
     Scanner scanner = new Scanner(System.in);
     Store store = new Store();
@@ -25,9 +25,9 @@ public class SubscriptionManager {
                 break;
             case 2:
                 System.out.println("Enter name");
-                String name = scanner.nextLine();
+                String name = scanner.next();
                 System.out.println("Enter message");
-                String message = scanner.nextLine();
+                String message = scanner.next();
                 sendMessage(name, message);
                 store.repeet();
                 break;
@@ -43,7 +43,7 @@ public class SubscriptionManager {
 
 
     void sendMessage(String subject, String message) {
-        for (int i = 0; i < users.length; i++) {
+        for (int i = 0; i < users.length-1; i++) {
             if (users[i].ifSend) {
                 sender.send(subject, message, sendFrom, users[i].getEmail());
             }
@@ -51,21 +51,21 @@ public class SubscriptionManager {
     }
 
     void userAdd() {
-        int k = 1;
+        int k = 0;
 
         System.out.println("Enter ID");
-        int Id = scanner.nextInt();
+        int Id =123;// scanner.nextInt();
         if (users.length == 1) {
             scanner.nextLine();
             System.out.println("Enter user name: ");
-            String name = scanner.nextLine();
+            String name = "Bob";//scanner.nextLine();
             System.out.println("Enter user email: ");
-            String email = scanner.nextLine();
+            String email = "rezorqqq5@gmail.com";//scanner.nextLine();
             System.out.println("Enter today date dd/MM/yyyy: ");
-            String signUpDate = scanner.nextLine();
+            String signUpDate ="22/10/2019";// scanner.nextLine();
             System.out.println("Send emails to user? (1-Y/2-N)");
             boolean sendMail = false;
-            int choice = scanner.nextInt();
+            int choice = 1;// scanner.nextInt();
             if (choice == 1) {
                 sendMail = true;
             }

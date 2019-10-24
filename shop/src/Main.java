@@ -53,9 +53,9 @@ public class Main {
                     System.out.println("Wallet: " + store.wallet + "$");
                     store.repeet();
                     break;
-                case 9: /*store.subscriptionManager.doi();*/
+                case 9: subscriptionManager.doi();
                 default:
-                    rerun = false;
+
 
             }
         }
@@ -63,8 +63,8 @@ public class Main {
     }
 
     public static void main(String[] args) throws ParseException {
-        //doing();
-        subscriptionManager.userAdd();
+        doing();
+        //subscriptionManager.userAdd();
 
 
 

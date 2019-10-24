@@ -1,13 +1,13 @@
 package Specific;
 
 public class Screen implements TechSpecification {
-    float d;
+    double d;
 
-    public Screen(float d) {
+    public Screen(double d) {
         this.d = d;
     }
 
-    public float getD() {
+    public double getD() {
         return d;
     }
 

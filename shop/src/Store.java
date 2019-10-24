@@ -2,21 +2,13 @@
 
 import Categories.*;
 import Specific.*;
-
-import java.lang.annotation.Target;
 import java.text.ParseException;
-import java.util.ArrayList;
-
 import java.util.Arrays;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class Store extends AddItems implements Search {
     private Scanner scanner = new Scanner(System.in);
     double wallet = 0;
-   /* SubscriptionManager subscriptionManager = new SubscriptionManager();*/
-
-
 
     @Override
     public void doType(Smartphone[] mass) throws ParseException {
@@ -236,41 +228,10 @@ public class Store extends AddItems implements Search {
 
     }
 
-
-    /*@Override
-    public void search(Smartphone[] mass) {
-
-    }
-
-    @Override
-    public void search(Computer[] mass) {
-
-    }
-
-    @Override
-    public void search(Vagetables[] mass) {
-
-    }
-
-    @Override
-    public void search(Candy[] mass) {
-
-    }
-
-    @Override
-    public void search(Water[] mass) {
-
-    }
-
-    @Override
-    public void search(Soda[] mass) {
-
-    }*/
-
     @Override
     public void addItem(Smartphone[] mass) throws ParseException {
         System.out.println("Enter ID");
-        Id = 11;//scanner.nextInt();
+        Id = scanner.nextInt();
         for (int i = 0; i < mass.length - 1; i++) {
             if (Id == mass[i].getId()) {
                 System.out.println("Введите количество добавляемых смартфонов" + mass[i].getName() + ":");
@@ -284,35 +245,35 @@ public class Store extends AddItems implements Search {
             } else break;
 
         }
-        //scanner.next();
+        scanner.nextLine();
         System.out.println("Enter name:");
-        name = "Nokia";//scanner.nextLine();
+        name = scanner.nextLine();
         System.out.println("Enter value");
-        value = 5;//scanner.nextInt();
-        //scanner.next();
+        value = scanner.nextInt();
+        scanner.nextLine();
         System.out.println("Enter description");
-        description = "lol";// scanner.nextLine();
+        description = scanner.nextLine();
         System.out.println("Enter price");
-        price = 300;//scanner.nextDouble();
-        //scanner.next();
+        price = scanner.nextDouble();
+        scanner.nextLine();
         System.out.println("Enter OS type");
-        operationSys = "android";//scanner.nextLine();
+        operationSys = scanner.nextLine();
         System.out.println("Enter RAM size");
-        ramSize = 4;//scanner.nextInt();
-        //scanner.nextLine();
+        ramSize = scanner.nextInt();
+        scanner.nextLine();
         System.out.println("Enter RAM type");
-        ramType = "ddr4";// scanner.nextLine();
+        ramType = scanner.nextLine();
         System.out.println("Enter number of core");
-        numbCore = 4;//scanner.nextInt();
+        numbCore = scanner.nextInt();
         System.out.println("Enter core frequency");
-        freqCore = 5.5;// scanner.nextDouble();
+        freqCore = scanner.nextDouble();
         System.out.println("Enter warranty");
-        warranty = 12;// scanner.nextInt();
+        warranty = scanner.nextInt();
         System.out.println("Enter screen size");
-        float screenSize = (float) 5.5;// scanner.nextFloat();
-        //scanner.nextLine();
+        screenSize = scanner.nextDouble();
+
         System.out.println("Enter battery life time");
-        int battLife = 36;//scanner.nextInt();
+        int battLife = scanner.nextInt();
 
 
         smartphones[k] = new Smartphone(Id, name, value, description, price,
@@ -335,7 +296,7 @@ public class Store extends AddItems implements Search {
     @Override
     public void addItem(Computer[] mass) throws ParseException {
         System.out.println("Enter ID");
-        Id = 8;//scanner.nextInt();
+        Id = scanner.nextInt();
         for (int i = 0; i < mass.length - 1; i++) {
             if (Id == mass[i].getId()) {
                 System.out.println("Введите количество добавляемых смартфонов" + mass[i].getName() + ":");
@@ -349,35 +310,37 @@ public class Store extends AddItems implements Search {
             } else break;
 
         }
-        //scanner.next();
+        scanner.nextLine();
         System.out.println("Enter name:");
-        name = "Dell";//scanner.nextLine();
+        name = scanner.nextLine();
         System.out.println("Enter value");
-        value = 3;//scanner.nextInt();
-        //scanner.next();
+        value = scanner.nextInt();
+        scanner.nextLine();
         System.out.println("Enter description");
-        description = "lol";// scanner.nextLine();
+        description = scanner.nextLine();
         System.out.println("Enter price");
-        price = 300;//scanner.nextDouble();
-        //scanner.next();
+        price = scanner.nextDouble();
+        scanner.nextLine();
         System.out.println("Enter RAM size");
-        ramSize = 8;//scanner.nextInt();
-        //scanner.nextLine();
+        ramSize = scanner.nextInt();
+        scanner.nextLine();
         System.out.println("Enter RAM type");
-        ramType = "ddr4";// scanner.nextLine();
+        ramType = scanner.nextLine();
         System.out.println("Enter number of core");
-        numbCore = 4;//scanner.nextInt();
+        numbCore = scanner.nextInt();
         System.out.println("Enter core frequency");
-        freqCore = 3.5;// scanner.nextDouble();
+        freqCore = scanner.nextDouble();
         System.out.println("Enter Video Card CPU");
-        videoCpu = 4; //scanner.nextInt();
+        videoCpu = scanner.nextInt();
         System.out.println("Enter video core frequency");
-        videoCpuFreq = 3.5;// scanner.nextDouble();
-        System.out.println("Enter RAM size");
-        videoRamSize = 4; //scanner.nextInt();System.out.println("Enter RAM size");
-        videoRamType = "DDR5"; //scanner.nextLine();
+        videoCpuFreq = scanner.nextDouble();
+        System.out.println("Enter Video RAM size");
+        videoRamSize = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Enter Video RAM type");
+        videoRamType = scanner.nextLine();
         System.out.println("Enter warranty");
-        warranty = 12;// scanner.nextInt();
+        warranty = scanner.nextInt();
         computers[p] = new Computer(Id, name, value, description, price,
                 new OperationSystem(operationSys),
                 new Ram(ramSize, ramType), new Cpu(numbCore, freqCore),
@@ -385,10 +348,7 @@ public class Store extends AddItems implements Search {
                 new VideoMemory(videoRamSize, videoRamType),
                 new Warranty(warranty));
 
-
-        System.out.println("++" + k);
         computers = Arrays.copyOf(computers, computers.length + 1);
-        System.out.println(computers.length);
         System.out.println("Computer successfully added to the warehouse");
         System.out.println("---" + computers[p].getName() + "---");
         p++;
@@ -399,7 +359,7 @@ public class Store extends AddItems implements Search {
     @Override
     public void addItem(Vagetables[] mass) throws ParseException {
         System.out.println("Enter ID");
-        Id = 11;//scanner.nextInt();
+        Id = scanner.nextInt();
         for (int i = 0; i < mass.length - 1; i++) {
             if (Id == mass[i].getId()) {
                 System.out.println("Введите количество добавляемых смартфонов" + mass[i].getName() + ":");
@@ -414,22 +374,25 @@ public class Store extends AddItems implements Search {
 
         }
 
-        //scanner.next();
+        scanner.nextLine();
         System.out.println("Enter name:");
-        name = "Tomato";//scanner.nextLine();
+        name = scanner.nextLine();
         System.out.println("Enter value");
-        value = 5;//scanner.nextInt();
-        //scanner.next();
+        value = scanner.nextInt();
+        scanner.nextLine();
         System.out.println("Enter description");
-        description = "lol";// scanner.nextLine();
+        description = scanner.nextLine();
         System.out.println("Enter price");
-        price = 25;//scanner.nextDouble();
+        price = scanner.nextDouble();
+        scanner.nextLine();
         System.out.println("Enter Variety");
-        variety = "black tomato"; // scanner.nextLine();
+        variety = scanner.nextLine();
         System.out.println("Enter date of manufacture(dd.MM.yyyy)");
-        dateIn = "23.10.2019"; // scanner.nextLine();
-        temperature = 5.5; //scanner.nextDouble();
-        expDay = 21; //scanner.nextInt();
+        dateIn = scanner.nextLine();
+        System.out.println("Enter temperature");
+        temperature = scanner.nextDouble();
+        System.out.println("Enter experience days");
+        expDay = scanner.nextInt();
         vagetables[v] = new Vagetables(Id, name, value, description, price,
                 new Variety(variety),
                 new ShelfLife(dateIn, temperature, expDay));
@@ -437,7 +400,7 @@ public class Store extends AddItems implements Search {
 
         vagetables = Arrays.copyOf(vagetables, vagetables.length + 1);
 
-        System.out.println("Computer successfully added to the warehouse");
+        System.out.println("Vagetables successfully added to the warehouse");
         System.out.println("---" + vagetables[v].getName() + "---");
         v++;
 
@@ -446,7 +409,7 @@ public class Store extends AddItems implements Search {
     @Override
     public void addItem(Candy[] mass) throws ParseException {
         System.out.println("Enter ID");
-        Id = 2034;//scanner.nextInt();
+        Id = scanner.nextInt();
         for (int i = 0; i < mass.length - 1; i++) {
             if (Id == mass[i].getId()) {
                 System.out.println("Введите количество добавляемых смартфонов" + mass[i].getName() + ":");
@@ -461,24 +424,28 @@ public class Store extends AddItems implements Search {
 
         }
 
-        //scanner.next();
+        scanner.nextLine();
         System.out.println("Enter name:");
-        name = "korovka";//scanner.nextLine();
+        name = scanner.nextLine();
         System.out.println("Enter value");
-        value = 10;//scanner.nextInt();
-        //scanner.next();
+        value = scanner.nextInt();
+        scanner.nextLine();
         System.out.println("Enter description");
-        description = "lol";// scanner.nextLine();
+        description = scanner.nextLine();
         System.out.println("Enter price");
-        price = 16;//scanner.nextDouble();
-        dateIn = "23.10.2019"; // scanner.nextLine();
-        temperature = 5.5; //scanner.nextDouble();
-        expDay = 156; //scanner.nextInt();
+        price = scanner.nextDouble();
+        scanner.nextLine();
+        System.out.println("Enter date of manufacture(dd.MM.yyyy)");
+        dateIn = scanner.nextLine();
+        System.out.println("Enter temperature");
+        temperature = scanner.nextDouble();
+        System.out.println("Enter experience days");
+        expDay = scanner.nextInt();
         candies[c] = new Candy(Id, name, value, description, price,
                 new ShelfLife(dateIn, temperature, expDay));
         candies = Arrays.copyOf(candies, candies.length + 1);
 
-        System.out.println("Computer successfully added to the warehouse");
+        System.out.println("Candies successfully added to the warehouse");
         System.out.println("---" + candies[c].getName() + "---");
         c++;
 
@@ -488,7 +455,7 @@ public class Store extends AddItems implements Search {
     @Override
     public void addItem(Water[] mass) throws ParseException {
         System.out.println("Enter ID");
-        Id = 8954;//scanner.nextInt();
+        Id = scanner.nextInt();
         for (int i = 0; i < mass.length - 1; i++) {
             if (Id == mass[i].getId()) {
                 System.out.println("Введите количество добавляемых смартфонов" + mass[i].getName() + ":");
@@ -502,21 +469,21 @@ public class Store extends AddItems implements Search {
             } else break;
 
         }
-        //scanner.next();
+        scanner.nextLine();
         System.out.println("Enter name:");
-        name = "bonaqua";//scanner.nextLine();
+        name = scanner.nextLine();
         System.out.println("Enter value");
-        value = 10;//scanner.nextInt();
-        //scanner.next();
+        value = scanner.nextInt();
+        scanner.nextLine();
         System.out.println("Enter description");
-        description = "lol";// scanner.nextLine();
+        description = scanner.nextLine();
         System.out.println("Enter price");
-        price = 3;//scanner.nextDouble();
+        price = scanner.nextDouble();
 
         water[w] = new Water(Id, name, value, description, price);
         water = Arrays.copyOf(water, water.length + 1);
 
-        System.out.println("Computer successfully added to the warehouse");
+        System.out.println("Water successfully added to the warehouse");
         System.out.println("---" + water[w].getName() + "---");
         w++;
 
@@ -525,7 +492,7 @@ public class Store extends AddItems implements Search {
     @Override
     public void addItem(Soda[] mass) throws ParseException {
         System.out.println("Enter ID");
-        Id = 8749;//scanner.nextInt();
+        Id = scanner.nextInt();
         for (int i = 0; i < mass.length - 1; i++) {
             if (Id == mass[i].getId()) {
                 System.out.println("Введите количество добавляемых смартфонов" + mass[i].getName() + ":");
@@ -540,25 +507,29 @@ public class Store extends AddItems implements Search {
 
         }
 
-        //scanner.next();
-        System.out.println("Enter name:");
-        name = "Cola";//scanner.nextLine();
+
         System.out.println("Enter value");
-        value = 12;//scanner.nextInt();
-        //scanner.next();
+        value = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Enter name:");
+        name = scanner.nextLine();
         System.out.println("Enter description");
-        description = "lol";// scanner.nextLine();
+        description = scanner.nextLine();
         System.out.println("Enter price");
-        price = 16;//scanner.nextDouble();
-        dateIn = "23.10.2019"; // scanner.nextLine();
-        temperature = 5.5; //scanner.nextDouble();
-        expDay = 156; //scanner.nextInt();
+        price = scanner.nextDouble();
+        scanner.nextLine();
+        System.out.println("Enter date of manufacture(dd.MM.yyyy)");
+        dateIn = scanner.nextLine();
+        System.out.println("Enter temperature");
+        temperature = scanner.nextDouble();
+        System.out.println("Enter experience days");
+        expDay = scanner.nextInt();
         soda[s] = new Soda(Id, name, value, description, price,
                 new ShelfLife(dateIn, temperature, expDay));
         soda = Arrays.copyOf(soda, soda.length + 1);
 
         System.out.println("Computer successfully added to the warehouse");
-        System.out.println("---" + soda[s].getName() + "---");
+        System.out.println("\n---" + soda[s].getName() + "---");
         s++;
 
     }
@@ -566,7 +537,7 @@ public class Store extends AddItems implements Search {
     @Override
     public void addItem(Dress[] mass) throws ParseException {
         System.out.println("Enter ID");
-        Id = 3513;//scanner.nextInt();
+        Id = scanner.nextInt();
         for (int i = 0; i < mass.length - 1; i++) {
             if (Id == mass[i].getId()) {
                 System.out.println("Введите количество добавляемых смартфонов" + mass[i].getName() + ":");
@@ -580,24 +551,25 @@ public class Store extends AddItems implements Search {
             } else break;
 
         }
-        //scanner.next();
+        scanner.nextLine();
         System.out.println("Enter name:");
-        name = "Kofta";//scanner.nextLine();
+        name = scanner.nextLine();
         System.out.println("Enter value");
-        value = 10;//scanner.nextInt();
-        //scanner.next();
+        value = scanner.nextInt();
+        scanner.nextLine();
         System.out.println("Enter description");
-        description = "lol";// scanner.nextLine();
+        description = scanner.nextLine();
         System.out.println("Enter price");
-        price = 3;//scanner.nextDouble();
-        System.out.println("Enter year of foundation");
-        year = "25.10.1927";// scanner.nextLine();
+        price = scanner.nextDouble();
+        scanner.nextLine();
+        System.out.println("Enter year of foundation dd.MM.yyyy");
+        year = scanner.nextLine();
         System.out.println("Enter brend name");
-        brendName = "Prado";// scanner.nextLine();
+        brendName = scanner.nextLine();
         System.out.println("Enter value of personal");
-        personal = 1250;//scanner.nextInt();
+        personal = scanner.nextInt();
         System.out.println("Enter num of country");
-        countries = 180; //scanner.nextInt();
+        countries = scanner.nextInt();
 
 
         dresses[d] = new Dress(Id, name, value, description, price,
@@ -612,11 +584,11 @@ public class Store extends AddItems implements Search {
 
     @Override
     public void sellItem(Smartphone[] mass) {
-        //scanner.nextLine();
+        scanner.nextLine();
         System.out.println("name");
-        String name = "Nokia";// scanner.next();
+        String name = scanner.next();
         System.out.println("amount");
-        int amount = 3;// scanner.nextInt();
+        int amount = scanner.nextInt();
 
         for (int i = 0; i < mass.length - 1; i++) {
 
@@ -630,21 +602,18 @@ public class Store extends AddItems implements Search {
                     repeet();
                     break;
                 }
-
             }
-
         }
         System.out.println(wallet);
-
     }
 
     @Override
     public void sellItem(Computer[] mass) {
-        //scanner.nextLine();
+        scanner.nextLine();
         System.out.println("name");
-        String name = "Dell";// scanner.next();
+        String name = scanner.next();
         System.out.println("amount");
-        int amount = 3;// scanner.nextInt();
+        int amount = scanner.nextInt();
 
         for (int i = 0; i < mass.length - 1; i++) {
 
@@ -668,11 +637,11 @@ public class Store extends AddItems implements Search {
 
     @Override
     public void sellItem(Vagetables[] mass) {
-        //scanner.nextLine();
+        scanner.nextLine();
         System.out.println("name");
-        String name = "Tomato";// scanner.next();
+        String name = scanner.next();
         System.out.println("amount");
-        int amount = 2;// scanner.nextInt();
+        int amount = scanner.nextInt();
 
         for (int i = 0; i < mass.length - 1; i++) {
 
@@ -696,11 +665,11 @@ public class Store extends AddItems implements Search {
 
     @Override
     public void sellItem(Candy[] mass) {
-        //scanner.nextLine();
+        scanner.nextLine();
         System.out.println("name");
-        String name = "korovka";// scanner.next();
+        String name = scanner.next();
         System.out.println("amount");
-        int amount = 4;// scanner.nextInt();
+        int amount = scanner.nextInt();
 
         for (int i = 0; i < mass.length - 1; i++) {
 
@@ -724,11 +693,11 @@ public class Store extends AddItems implements Search {
 
     @Override
     public void sellItem(Water[] mass) {
-        //scanner.nextLine();
+        scanner.nextLine();
         System.out.println("name");
-        String name = "bonaqua";// scanner.next();
+        String name = scanner.next();
         System.out.println("amount");
-        int amount = 1;// scanner.nextInt();
+        int amount = scanner.nextInt();
 
         for (int i = 0; i < mass.length - 1; i++) {
 
@@ -752,11 +721,11 @@ public class Store extends AddItems implements Search {
 
     @Override
     public void sellItem(Soda[] mass) {
-        //scanner.nextLine();
+        scanner.nextLine();
         System.out.println("name");
-        String name = "Cola";// scanner.next();
+        String name = scanner.next();
         System.out.println("amount");
-        int amount = 1;// scanner.nextInt();
+        int amount = scanner.nextInt();
 
         for (int i = 0; i < mass.length - 1; i++) {
 
@@ -780,11 +749,11 @@ public class Store extends AddItems implements Search {
 
     @Override
     public void sellItem(Dress[] mass) {
-        //scanner.nextLine();
+        scanner.nextLine();
         System.out.println("name");
-        String name = "Kofta";// scanner.next();
+        String name = scanner.next();
         System.out.println("amount");
-        int amount = 1;// scanner.nextInt();
+        int amount = scanner.nextInt();
 
         for (int i = 0; i < mass.length - 1; i++) {
 
@@ -805,7 +774,6 @@ public class Store extends AddItems implements Search {
         System.out.println(wallet);
 
     }
-
 
     void repeet() {
         String yes = "y";

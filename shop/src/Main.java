@@ -10,7 +10,7 @@ public class Main {
     private static Scanner scanner = new Scanner(System.in);
     static boolean rerun = true;
     private static Store store = new Store();
-    static SubscriptionManager subscriptionManager = new SubscriptionManager();
+    private static SubscriptionManager subscriptionManager = new SubscriptionManager();
 
 
     static void doing() throws ParseException {
@@ -64,7 +64,7 @@ public class Main {
 
     public static void main(String[] args) throws ParseException {
         doing();
-        //subscriptionManager.userAdd();
+
 
 
 

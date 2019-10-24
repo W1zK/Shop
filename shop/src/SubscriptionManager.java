@@ -14,9 +14,8 @@ public class SubscriptionManager {
     private int k = 0;
 
     public void doi() throws ParseException {
-        System.out.println("1 - Add Item" +
-                "\n2 - Sell Item" +
-                "\n3 - Search Item");
+        System.out.println("1 - Add User" +
+                "\n2 - Send Message");
         System.out.print("Выберите задание из списка:");
         int input = scanner.nextInt();
 
@@ -44,7 +43,7 @@ public class SubscriptionManager {
     }
 
 
-    void sendMessage(String subject, String message) {
+    private void sendMessage(String subject, String message) {
         for (int i = 0; i < users.length-1; i++) {
             if (users[i].ifSend) {
                 sender.send(subject, message, sendFrom, users[i].getEmail());
@@ -52,7 +51,7 @@ public class SubscriptionManager {
         }
     }
 
-    void userAdd() throws ParseException {
+    private void userAdd() throws ParseException {
 
 
         System.out.println("Enter ID");

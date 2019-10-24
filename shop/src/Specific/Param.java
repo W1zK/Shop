@@ -9,6 +9,7 @@ public class Param {
     protected String description;
     protected double price;
     protected String operationSys;
+    protected double screenSize;
     protected int ramSize;
     protected String ramType;
     protected int numbCore;

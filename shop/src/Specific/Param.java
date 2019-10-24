@@ -1,5 +1,7 @@
 package Specific;
 
+import java.text.SimpleDateFormat;
+
 public class Param {
     protected int Id;
     protected String name;
@@ -20,8 +22,17 @@ public class Param {
     protected String dateIn;
     protected double temperature;
     protected int expDay;
+    protected String year;
+    protected String brendName;
+    protected int personal;
+    protected int countries;
+
     protected int k;
     protected int p;
     protected int v;
+    protected int c;
+    protected int w;
+    protected int s;
+    protected int d;
 
 }

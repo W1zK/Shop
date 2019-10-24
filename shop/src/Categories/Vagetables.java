@@ -20,5 +20,6 @@ public class Vagetables extends Items implements TechSpecification {
     @Override
     public void show() {
         super.show();
+        System.out.println("Сорт: "+variety+"\n"+"Годен до: "+shelfLife.getExp());
     }
 }

@@ -14,6 +14,7 @@ import java.util.Scanner;
 public class Store extends AddItems implements Search {
     private Scanner scanner = new Scanner(System.in);
     double wallet = 0;
+   /* SubscriptionManager subscriptionManager = new SubscriptionManager();*/
 
 
 

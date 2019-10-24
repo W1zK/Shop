@@ -1,4 +1,5 @@
 
+import java.text.ParseException;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -8,10 +9,11 @@ public class SubscriptionManager {
     private Users[] users = new Users[1];
     private Sender sender = new Sender("shcherbanuk.a@blest.ua", "zxc123A21");
     private String sendFrom = "shcherbanuk.a@blest.ua";
-    Scanner scanner = new Scanner(System.in);
-    Store store = new Store();
+    private Scanner scanner = new Scanner(System.in);
+    private Store store = new Store();
+    private int k = 0;
 
-    public void doi() {
+    public void doi() throws ParseException {
         System.out.println("1 - Add Item" +
                 "\n2 - Sell Item" +
                 "\n3 - Search Item");
@@ -50,22 +52,22 @@ public class SubscriptionManager {
         }
     }
 
-    void userAdd() {
-        int k = 0;
+    void userAdd() throws ParseException {
+
 
         System.out.println("Enter ID");
-        int Id =123;// scanner.nextInt();
+        int Id =scanner.nextInt();
         if (users.length == 1) {
             scanner.nextLine();
             System.out.println("Enter user name: ");
-            String name = "Bob";//scanner.nextLine();
+            String name =scanner.nextLine();
             System.out.println("Enter user email: ");
-            String email = "rezorqqq5@gmail.com";//scanner.nextLine();
+            String email = scanner.nextLine();
             System.out.println("Enter today date dd/MM/yyyy: ");
-            String signUpDate ="22/10/2019";// scanner.nextLine();
+            String signUpDate =scanner.nextLine();
             System.out.println("Send emails to user? (1-Y/2-N)");
             boolean sendMail = false;
-            int choice = 1;// scanner.nextInt();
+            int choice = scanner.nextInt();
             if (choice == 1) {
                 sendMail = true;
             }
@@ -75,9 +77,11 @@ public class SubscriptionManager {
             k++;
 
         } else {
-            for (int i = 0; i < users.length; i++) {
+            for (int i = 0; i < users.length-1; i++) {
                 if (Id == users[i].getUserId()) {
                     System.out.println("User already registered");
+                    Main.rerun =true;
+                    Main.doing();
                     break;
                 }
             }
